@@ -51,6 +51,13 @@ def interpret_revenue_growth(growth):
 
 
 def interpret_debt(debt):
+    """Interpret a debt-to-equity ratio.
+
+    NOTE: yfinance's `debtToEquity` field is expressed as a percentage
+    (e.g. a value of 45 means a D/E ratio of 0.45), which is what the
+    thresholds below assume. If the data source ever changes, these
+    thresholds need to be revisited.
+    """
     if debt is None:
         return "Unavailable"
 

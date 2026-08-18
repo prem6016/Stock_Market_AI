@@ -16,12 +16,12 @@
 
 Instead of relying on a single indicator, the project combines multiple sources of information:
 
-* 📊 Current stock price and volume
-* 📈 Technical indicators
-* 💰 Fundamental financial metrics
-* 🇮🇳 Indian market context
-* 📰 Recent company news
-* 🤖 AI-powered interpretation using Google Gemini
+- 📊 Current stock price and volume
+- 📈 Technical indicators
+- 💰 Fundamental financial metrics
+- 🇮🇳 Indian market context
+- 📰 Recent company news
+- 🤖 AI-powered interpretation using Google Gemini
 
 The goal is to provide a concise but comprehensive daily analysis of a stock while clearly separating **market facts from AI interpretation**.
 
@@ -37,12 +37,12 @@ The project uses **Google Gemini** to interpret market information and generate 
 
 The AI is instructed to:
 
-* Use current information from available tools
-* Avoid inventing missing information
-* Distinguish facts from interpretation
-* Avoid unsupported claims
-* Avoid guaranteeing future price movements
-* Treat the output as analytical research rather than personalized investment advice
+- Use current information from available tools
+- Avoid inventing missing information
+- Distinguish facts from interpretation
+- Avoid unsupported claims
+- Avoid guaranteeing future price movements
+- Treat the output as analytical research rather than personalized investment advice
 
 ---
 
@@ -50,16 +50,16 @@ The AI is instructed to:
 
 The technical-analysis engine uses approximately one year of historical market data and calculates:
 
-* SMA 20
-* SMA 50
-* SMA 200
-* RSI 14
-* MACD
-* MACD Signal
-* Daily Return
-* Volume Change
-* 20-day Average Volume
-* Current Volume vs Average Volume
+- SMA 20
+- SMA 50
+- SMA 200
+- RSI 14
+- MACD
+- MACD Signal
+- Daily Return
+- Volume Change
+- 20-day Average Volume
+- Current Volume vs Average Volume
 
 The project then interprets the indicators to determine the broader technical trend.
 
@@ -90,25 +90,25 @@ The project retrieves fundamental information using Yahoo Finance.
 
 Currently supported metrics include:
 
-* Market Capitalization
-* P/E Ratio
-* Forward P/E
-* EPS
-* Revenue
-* Revenue Growth
-* Net Income
-* Profit Margin
-* ROE
-* Debt-to-Equity
-* Free Cash Flow
-* Dividend Yield
+- Market Capitalization
+- P/E Ratio
+- Forward P/E
+- EPS
+- Revenue
+- Revenue Growth
+- Net Income
+- Profit Margin
+- ROE
+- Debt-to-Equity
+- Free Cash Flow
+- Dividend Yield
 
 The fundamental-analysis layer provides simple interpretations for:
 
-* Valuation
-* Profitability
-* Revenue Growth
-* Leverage
+- Valuation
+- Profitability
+- Revenue Growth
+- Leverage
 
 Example:
 
@@ -125,13 +125,13 @@ P/E > 40        → Very high valuation
 
 The AI agent also checks the broader Indian market using:
 
-* **NIFTY 50**
-* **Bank NIFTY**
+- **NIFTY 50**
+- **Bank NIFTY**
 
 For each index, the system retrieves:
 
-* Current price
-* Previous close
+- Current price
+- Previous close
 
 This gives the AI additional market context before generating the stock analysis.
 
@@ -143,13 +143,13 @@ The project uses Google Search through Gemini to research recent company-specifi
 
 The news analysis focuses on the previous **7 days** and looks for:
 
-* Company announcements
-* Financial results
-* Orders and contracts
-* Management changes
-* Regulatory developments
-* Major business developments
-* Important sector developments
+- Company announcements
+- Financial results
+- Orders and contracts
+- Management changes
+- Regulatory developments
+- Major business developments
+- Important sector developments
 
 The AI is explicitly instructed not to invent news and to report when no meaningful recent news is found.
 
@@ -278,11 +278,11 @@ Stock_Market_AI/
 
 Before running the project, make sure you have:
 
-* Python 3.x
-* Internet connectivity
-* A Google Gemini API key
-* `pip`
-* Access to Yahoo Finance data
+- Python 3.x
+- Internet connectivity
+- A Google Gemini API key
+- `pip`
+- Access to Yahoo Finance data
 
 ---
 
@@ -570,18 +570,10 @@ The standalone AI technical-analysis module returns structured JSON containing:
 ```json
 {
   "summary": "Short summary",
-  "bullish_signals": [
-    "signal 1",
-    "signal 2"
-  ],
-  "bearish_signals": [
-    "signal 1",
-    "signal 2"
-  ],
+  "bullish_signals": ["signal 1", "signal 2"],
+  "bearish_signals": ["signal 1", "signal 2"],
   "risk": "Risk assessment",
-  "key_signals": [
-    "signal to monitor"
-  ],
+  "key_signals": ["signal to monitor"],
   "overall_assessment": "Overall technical assessment",
   "confidence": 75
 }
@@ -736,14 +728,14 @@ The search focuses on approximately the last seven days.
 
 Relevant categories include:
 
-* Company announcements
-* Earnings/results
-* Orders
-* Contracts
-* Management changes
-* Regulatory developments
-* Business developments
-* Sector developments
+- Company announcements
+- Earnings/results
+- Orders
+- Contracts
+- Management changes
+- Regulatory developments
+- Business developments
+- Sector developments
 
 The system is instructed to avoid fabricated information.
 
@@ -871,16 +863,16 @@ This project is a research and educational tool.
 
 Important limitations include:
 
-* Yahoo Finance data availability can vary.
-* Some fundamental fields may be unavailable or `None`.
-* Market data can be delayed depending on the underlying data source.
-* Technical indicators are based on historical price/volume data.
-* AI-generated interpretations can contain errors.
-* News retrieval depends on available search results.
-* Fundamental classification rules are simplified.
-* The system does not perform complete professional equity research.
-* The system does not guarantee profitable trading decisions.
-* Historical patterns do not guarantee future performance.
+- Yahoo Finance data availability can vary.
+- Some fundamental fields may be unavailable or `None`.
+- Market data can be delayed depending on the underlying data source.
+- Technical indicators are based on historical price/volume data.
+- AI-generated interpretations can contain errors.
+- News retrieval depends on available search results.
+- Fundamental classification rules are simplified.
+- The system does not perform complete professional equity research.
+- The system does not guarantee profitable trading decisions.
+- Historical patterns do not guarantee future performance.
 
 ---
 
@@ -892,14 +884,14 @@ The project can be extended significantly.
 
 Potential additions:
 
-* EMA
-* Bollinger Bands
-* ATR
-* Stochastic RSI
-* ADX
-* OBV
-* VWAP
-* Fibonacci levels
+- EMA
+- Bollinger Bands
+- ATR
+- Stochastic RSI
+- ADX
+- OBV
+- VWAP
+- Fibonacci levels
 
 ---
 
@@ -907,18 +899,18 @@ Potential additions:
 
 Possible additions:
 
-* PEG ratio
-* ROIC
-* Current ratio
-* Quick ratio
-* Operating margin
-* EBITDA margin
-* Earnings growth
-* Cash-flow trends
-* Promoter holding
-* Institutional ownership
-* Quarterly results
-* Balance-sheet trends
+- PEG ratio
+- ROIC
+- Current ratio
+- Quick ratio
+- Operating margin
+- EBITDA margin
+- Earnings growth
+- Cash-flow trends
+- Promoter holding
+- Institutional ownership
+- Quarterly results
+- Balance-sheet trends
 
 ---
 
@@ -926,13 +918,13 @@ Possible additions:
 
 Future versions could add:
 
-* News sentiment scoring
-* Positive/negative/neutral classification
-* News impact scoring
-* Earnings-event detection
-* Regulatory-event detection
-* Sector sentiment
-* Duplicate-news filtering
+- News sentiment scoring
+- Positive/negative/neutral classification
+- News impact scoring
+- Earnings-event detection
+- Regulatory-event detection
+- Sector sentiment
+- Duplicate-news filtering
 
 ---
 
@@ -974,14 +966,14 @@ A future version could evaluate the strategy against historical data.
 
 Potential metrics:
 
-* CAGR
-* Total Return
-* Sharpe Ratio
-* Sortino Ratio
-* Maximum Drawdown
-* Win Rate
-* Profit Factor
-* Number of Trades
+- CAGR
+- Total Return
+- Sharpe Ratio
+- Sortino Ratio
+- Maximum Drawdown
+- Win Rate
+- Profit Factor
+- Number of Trades
 
 ---
 
@@ -1072,14 +1064,14 @@ Example architecture:
 
 A production deployment could use:
 
-* Docker
-* Docker Compose
-* AWS ECS
-* AWS Fargate
-* CloudWatch
-* Grafana
-* Prometheus
-* GitHub Actions
+- Docker
+- Docker Compose
+- AWS ECS
+- AWS Fargate
+- CloudWatch
+- Grafana
+- Prometheus
+- GitHub Actions
 
 ---
 
@@ -1109,10 +1101,10 @@ for local development and environment/secret management services for production.
 
 For AWS deployments, consider:
 
-* AWS Secrets Manager
-* AWS Systems Manager Parameter Store
-* IAM roles
-* ECS task secrets
+- AWS Secrets Manager
+- AWS Systems Manager Parameter Store
+- IAM roles
+- ECS task secrets
 
 ---
 
@@ -1147,19 +1139,19 @@ Contributions are welcome.
 
 Possible areas for contribution:
 
-* New technical indicators
-* Better fundamental scoring
-* Improved news analysis
-* Backtesting
-* Portfolio analysis
-* Risk management
-* Web dashboard
-* Docker deployment
-* AWS deployment
-* Automated reporting
-* Testing
-* Performance improvements
-Before submitting a Pull Request:
+- New technical indicators
+- Better fundamental scoring
+- Improved news analysis
+- Backtesting
+- Portfolio analysis
+- Risk management
+- Web dashboard
+- Docker deployment
+- AWS deployment
+- Automated reporting
+- Testing
+- Performance improvements
+  Before submitting a Pull Request:
 
 1. Test your changes.
 2. Keep API keys and secrets out of commits.
@@ -1217,11 +1209,11 @@ The author and contributors are not responsible for financial losses resulting f
 
 If you find this project useful:
 
-* ⭐ Star the repository
-* 🍴 Fork the repository
-* 🐛 Report bugs
-* 💡 Suggest improvements
-* 🔧 Submit Pull Requests
+- ⭐ Star the repository
+- 🍴 Fork the repository
+- 🐛 Report bugs
+- 💡 Suggest improvements
+- 🔧 Submit Pull Requests
 
 Repository:
 
@@ -1233,13 +1225,13 @@ https://github.com/prem6016/Stock_Market_AI
 
 This project makes use of several excellent open-source and public technologies:
 
-* [Google Gemini](https://ai.google.dev/)
-* [Google GenAI SDK](https://github.com/googleapis/python-genai)
-* [Yahoo Finance](https://finance.yahoo.com/)
-* [yfinance](https://github.com/ranaroussi/yfinance)
-* [Pandas](https://pandas.pydata.org/)
-* [Technical Analysis Library](https://github.com/bukosabino/ta)
-* [Python](https://www.python.org/)
+- [Google Gemini](https://ai.google.dev/)
+- [Google GenAI SDK](https://github.com/googleapis/python-genai)
+- [Yahoo Finance](https://finance.yahoo.com/)
+- [yfinance](https://github.com/ranaroussi/yfinance)
+- [Pandas](https://pandas.pydata.org/)
+- [Technical Analysis Library](https://github.com/bukosabino/ta)
+- [Python](https://www.python.org/)
 
 ---
 

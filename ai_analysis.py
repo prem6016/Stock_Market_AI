@@ -1,5 +1,5 @@
 from google import genai
-from config import GEMINI_API_KEY
+from config import GEMINI_API_KEY, GEMINI_MODEL
 import json
 
 
@@ -60,11 +60,19 @@ The confidence must be an integer from 0 to 100.
 """
 
     response = client.models.generate_content(
-        model="gemini-flash-latest",
+        model=GEMINI_MODEL,
         contents=prompt,
         config={
             "response_mime_type": "application/json"
         }
     )
 
-    return json.loads(response.text)
+    if not response.text:
+        raise ValueError("Gemini returned an empty response for AI analysis.")
+
+    try:
+        return json.loads(response.text)
+    except json.JSONDecodeError as exc:
+        raise ValueError(
+            f"Gemini returned a response that was not valid JSON: {exc}"
+        ) from exc

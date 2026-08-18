@@ -20,6 +20,12 @@ def clean_number(value):
 
 
 def get_stock_price(symbol: str):
+    """Return the latest available closing price and volume for a stock
+    symbol, using the most recent trading day in the last 5 days.
+
+    Args:
+        symbol: Ticker symbol, e.g. "HFCL.NS" for an NSE-listed stock.
+    """
 
     stock = yf.Ticker(symbol)
 

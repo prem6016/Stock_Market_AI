@@ -1,21 +1,25 @@
 import yfinance as yf
 
 
-def get_market_context():
+def _latest_and_previous_close(symbol):
+    data = yf.Ticker(symbol).history(period="5d")
 
-    nifty = yf.Ticker("^NSEI")
-    bank_nifty = yf.Ticker("^NSEBANK")
-
-    nifty_data = nifty.history(period="5d")
-    bank_data = bank_nifty.history(period="5d")
+    if data.empty or len(data) < 2:
+        return None
 
     return {
-        "nifty": {
-            "price": float(nifty_data["Close"].iloc[-1]),
-            "previous_close": float(nifty_data["Close"].iloc[-2])
-        },
-        "bank_nifty": {
-            "price": float(bank_data["Close"].iloc[-1]),
-            "previous_close": float(bank_data["Close"].iloc[-2])
-        }
+        "price": float(data["Close"].iloc[-1]),
+        "previous_close": float(data["Close"].iloc[-2])
+    }
+
+
+def get_market_context():
+    """Return the latest and previous close for the Nifty 50 and Bank
+    Nifty indices, to give broader Indian market context for a stock
+    analysis. Returns None for an index if data is temporarily
+    unavailable, rather than raising."""
+
+    return {
+        "nifty": _latest_and_previous_close("^NSEI"),
+        "bank_nifty": _latest_and_previous_close("^NSEBANK")
     }
